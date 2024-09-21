@@ -4,4 +4,4 @@
 2. minio1
 3. minio2
 4. minio3
-5. minio4
+5. minio4 with nginx
