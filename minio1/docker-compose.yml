@@ -1,6 +1,9 @@
 services:
   minio1:
     image: quay.io/minio/minio:${MINIO_RELEASE}
+    container_name: minio1
+    hostname: minio1
+    restart: unless-stopped
     command: server --console-address ":9001" http://minio{1...4}/data{1...2}
     expose:
       - '9000'
@@ -13,7 +16,8 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-    hostname: minio1
+    networks:
+      - minio-network
     volumes:
       - data1-1:/data1
       - data1-2:/data2
