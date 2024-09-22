@@ -16,10 +16,12 @@ services:
     volumes:
       - data3-1:/data1
       - data3-2:/data2
+      - misc3:/data
 
 volumes:
   data3-1:
   data3-2:
+  misc3:
 
 networks:
   minio-network:
