@@ -38,7 +38,8 @@ services:
     networks:
       - minio-network
     depends_on:
-      - minio4
+      minio4:
+        condition: service_healthy
 
 volumes:
   data4-1:
